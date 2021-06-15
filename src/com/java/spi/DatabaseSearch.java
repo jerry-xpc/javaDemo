@@ -7,6 +7,7 @@ public class DatabaseSearch implements Search{
     public List<String> searchDoc(String keyword) {
         System.out.println("数据搜索:"+keyword);
         //test Git
+        System.out.println("test Git");
         return null;
     }
 }
