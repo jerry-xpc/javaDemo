@@ -1,4 +1,4 @@
-package com.javaSE.io.reader;
+package com.java.javaSE.io.reader;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

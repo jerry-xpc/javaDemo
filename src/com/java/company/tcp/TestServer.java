@@ -1,4 +1,4 @@
-package com.company.tcp;
+package com.java.company.tcp;
 
 import java.io.DataOutputStream;
 import java.io.OutputStream;

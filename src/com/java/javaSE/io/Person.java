@@ -1,4 +1,4 @@
-package com.javaSE.io;
+package com.java.javaSE.io;
 
 import java.io.Serializable;
 

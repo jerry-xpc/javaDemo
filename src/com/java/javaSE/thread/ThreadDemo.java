@@ -1,4 +1,4 @@
-package com.javaSE.thread;
+package com.java.javaSE.thread;
 
 /**
  * 第一种实现多线程的时候：

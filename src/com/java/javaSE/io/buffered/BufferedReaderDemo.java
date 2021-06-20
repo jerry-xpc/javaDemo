@@ -1,4 +1,4 @@
-package com.javaSE.io.buffered;
+package com.java.javaSE.io.buffered;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.javaSE.io.readerOrWriter;
+package com.java.javaSE.io.readerOrWriter;
 
 import java.io.CharArrayReader;
 import java.io.IOException;

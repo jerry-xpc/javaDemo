@@ -1,4 +1,4 @@
-package com.company.udp;
+package com.java.company.udp;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;

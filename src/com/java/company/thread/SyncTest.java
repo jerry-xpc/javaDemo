@@ -1,4 +1,4 @@
-package com.company.thread;
+package com.java.company.thread;
 
 public class SyncTest implements Runnable
 {

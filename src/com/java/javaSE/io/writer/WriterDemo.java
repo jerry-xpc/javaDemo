@@ -1,4 +1,4 @@
-package com.javaSE.io.writer;
+package com.java.javaSE.io.writer;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

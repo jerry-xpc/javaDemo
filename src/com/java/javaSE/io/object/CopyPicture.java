@@ -1,4 +1,4 @@
-package com.javaSE.io.object;
+package com.java.javaSE.io.object;
 
 import java.awt.event.WindowEvent;
 import java.io.FileReader;

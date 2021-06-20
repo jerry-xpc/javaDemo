@@ -1,4 +1,4 @@
-package com.javaSE.io.print;
+package com.java.javaSE.io.print;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

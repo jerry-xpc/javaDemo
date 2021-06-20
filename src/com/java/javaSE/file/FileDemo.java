@@ -1,4 +1,4 @@
-package com.javaSE.file;
+package com.java.javaSE.file;
 
 import java.io.File;
 import java.io.IOException;

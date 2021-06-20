@@ -1,4 +1,4 @@
-package com.javaSE.io.inputStream;
+package com.java.javaSE.io.inputStream;
 
 import java.io.FileInputStream;
 import java.io.IOException;

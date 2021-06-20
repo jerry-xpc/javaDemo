@@ -1,4 +1,4 @@
-package com.javaSE.io.ByateArray;
+package com.java.javaSE.io.ByateArray;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
