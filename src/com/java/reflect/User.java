@@ -1,6 +1,5 @@
 package com.java.reflect;
 
-import org.junit.Test;
 
 import javax.jws.soap.SOAPBinding;
 

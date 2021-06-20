@@ -1,6 +1,7 @@
 package com.java.javaSE.io.object;
 
-import com.javaSE.io.Person;
+
+import com.java.javaSE.io.Person;
 
 import java.io.FileInputStream;
 import java.io.IOException;
