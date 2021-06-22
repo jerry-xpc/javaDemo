@@ -16,15 +16,12 @@ public class ThreadApiDemo implements Runnable {
          * 优先级越高一定优先执行吗？
          *      不一定，只是提高了优先执行的概率
          */
-
         ThreadApiDemo threadApiDemo = new ThreadApiDemo();
         Thread t = new Thread(threadApiDemo);
         t.start();
         System.out.println(t.getPriority());
-
-
+        //判断当前线程是否在活动运行
         System.out.println(t.isAlive());
-
     }
 
     @Override
