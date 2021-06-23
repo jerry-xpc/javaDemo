@@ -99,9 +99,18 @@ package com.java.javaSE.thread;
  *   3、ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）
  *   4、ThreadPoolExecutor.CallerRunsPolicy:由调用线程处理该任务
  *
+ * 线程execute执行逻辑：
+ *  1、如果当前运行的线程，少于corePoolSize，则创建一个新的线程来执行任务。
+ *  2、如果运行的线程等于或多于 corePoolSize，将任务加入 BlockingQueue。
+ *  3、如果加入 BlockingQueue 成功，需要二次检查线程池的状态如果线程池没有处于 Running，则从 BlockingQueue 移除任务，启动拒绝策略。
+ *  4、如果线程池处于 Running状态，则检查工作线程（worker）是否为0。如果为0，则创建新的线程来处理任务。如果启动线程数大于maximumPoolSize，任务将被拒绝策略拒绝。
+ *  5、如果加入 BlockingQueue 。失败,则创建新的线程来处理任务。
+ *  6、如果启动线程数大于maximumPoolSize，任务将被拒绝策略拒绝。
+ *
+ *
  * 注意：在多线程的时候，可以实现唤醒和等待过程，但是唤醒和等待操作不是对呀thread类，而是我们设置的共享对象或者共享变量
  *
-*/
+ */
 public class ThreadDemo extends Thread
 {
     @Override
