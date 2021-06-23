@@ -77,6 +77,12 @@ package com.java.javaSE.thread;
  *     1、newWorkStealingPool适合使用在很耗时的操作，但是newWorkStealingPool不是ThreadPoolExecutor的扩展，
  *     它是新的线程池类ForkJoinPool的扩展，但是都是在统一的一个Executors类中实现，由于能够合理的使用CPU进行对任务操作（并行操作）,
  *     创建一个并行线程池、并行级别决定了同一时刻有多少线程在执行，如果不传入并行级别参数，将默认当前系统的CPU个数
+ *线程池的生命周期：
+ *     1、RUNNING：能接受新提交的任务，并且也能处理阻塞队列中的任务
+ *     2、SHUTDOWN：关闭状态，不能接受新提交的任务，但却可以继续处理阻塞队列中已保存的任务
+ *     3、STOP：不能接受新任务，也不处理队列中的任务，会中断正在处理任务的线程
+ *     4、TIDYING：如果所有的任务都终止了，workerCount（有效线程数）为0，线程池进入该状态后会调用terminated()方法进入TERMINATED状态
+ *     5、TERMINATED：在terminated()方法执行完成后进入该状态，默认terminated()方法中什么也没有做。
  *
  * 注意：在多线程的时候，可以实现唤醒和等待过程，但是唤醒和等待操作不是对呀thread类，而是我们设置的共享对象或者共享变量
  *
