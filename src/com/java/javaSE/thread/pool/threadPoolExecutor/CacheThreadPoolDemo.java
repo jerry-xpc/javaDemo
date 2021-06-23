@@ -1,4 +1,6 @@
-package com.java.javaSE.thread.pool;
+package com.java.javaSE.thread.pool.threadPoolExecutor;
+
+import com.java.javaSE.thread.pool.Task;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

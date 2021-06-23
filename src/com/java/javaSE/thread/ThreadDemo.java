@@ -65,11 +65,18 @@ package com.java.javaSE.thread;
  *     1、先判断线程池中核心线程池所有的线程是否都在执行任务。如果不是则新建一个线程执行刚提交的任务，否则核心线程池所有的线程都在执行任务则进入2步
  *     2、判断当前线程队列是否已满，如果未满，则将刚提交的任务放在阻塞队列中；否则进入第三步
  *     3、判断线程池中所有的线程是否都在执行任务，如果没有则创建一个新的线程来执行任务，否则就交给饱和策略进行处理
- *     四种线程池：
+ *     四种普通线程池：ThreadPoolExecutor
  *     1、newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。
  *     2、newFixedThreadPool 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
  *     3、newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。
  *     4、newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
+ *     两种定时器线程池：ScheduleThreadPoolExecutor
+ *     1、ScheduledThreadpool创建一个延时或者定时任务线程
+ *     2、SingleThreadScheduledExecutor只会有一个线程，不管你提交多少任务，这些任务会顺序执行，如果发生异常会取消下面的任务，线程池也不会关闭，注意捕捉异常
+ *     分而治之线程池：ForkJoinPool
+ *     1、newWorkStealingPool适合使用在很耗时的操作，但是newWorkStealingPool不是ThreadPoolExecutor的扩展，
+ *     它是新的线程池类ForkJoinPool的扩展，但是都是在统一的一个Executors类中实现，由于能够合理的使用CPU进行对任务操作（并行操作）,
+ *     创建一个并行线程池、并行级别决定了同一时刻有多少线程在执行，如果不传入并行级别参数，将默认当前系统的CPU个数
  *
  * 注意：在多线程的时候，可以实现唤醒和等待过程，但是唤醒和等待操作不是对呀thread类，而是我们设置的共享对象或者共享变量
  *
