@@ -1,6 +1,7 @@
 package com.java.javaSE.thread;
 
-/**
+/*
+*
  * 第一种实现多线程的时候：
  *      1、需要集成Thread类;
  *      2、必须要重写run方法，指的是核心执行逻辑;
@@ -84,9 +85,23 @@ package com.java.javaSE.thread;
  *     4、TIDYING：如果所有的任务都终止了，workerCount（有效线程数）为0，线程池进入该状态后会调用terminated()方法进入TERMINATED状态
  *     5、TERMINATED：在terminated()方法执行完成后进入该状态，默认terminated()方法中什么也没有做。
  *
+ *ArrayBlockingQueue与LinkedBlockingQueue区别：
+ *  1、队列中锁的实现不同
+ *      ArrayBlockingQueue实现的队列中的锁是没有分离的，即生产和消费都是同一个锁；
+ *      LinkedBlockingQueue实现的队列中的锁是分离的，即生产是用的putLock，消费用的是tackLock；
+ *  2、队列的大小初始化不同
+ *     ArrayBlockingQueue实现的队列中必须指定队列的大小；
+ *     LinkedBlockingQueue实现的队列中可以不指定队列的大小，但默认值是Interger.MAX_VALUE；
+ *
+ * 拒绝策略：
+ *   1、ThreadPoolExecutor.AbortPolicy：丢弃任务并抛出RejectedExecutionException异常
+ *   2、ThreadPoolExecutor.DiscardPolicy:丢弃任务但不抛出异常
+ *   3、ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）
+ *   4、ThreadPoolExecutor.CallerRunsPolicy:由调用线程处理该任务
+ *
  * 注意：在多线程的时候，可以实现唤醒和等待过程，但是唤醒和等待操作不是对呀thread类，而是我们设置的共享对象或者共享变量
  *
- */
+*/
 public class ThreadDemo extends Thread
 {
     @Override
