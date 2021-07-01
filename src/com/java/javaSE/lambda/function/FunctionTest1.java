@@ -14,6 +14,9 @@ public class FunctionTest1 {
         //在此当<>中只有一个类型时，表示入参类型无返回值类型
         Consumer<String> consumer = (str)-> System.out.println(str);
         consumer.accept("xingpc001");
+
+        //------------通过类静态方法引用方式执行---------------------
+
         //同样的<>中只有一个类型时，也有可能是返回值类型无入参类型
         //直接使用一个类的静态方法
         Supplier<String> s = ()->FunctionTest1.put();
@@ -21,8 +24,6 @@ public class FunctionTest1 {
         //静态方法引用
         Supplier<String> s2 = FunctionTest1::put;
         System.out.println(s2.get());
-
-        //------------通过类静态方法引用方式执行---------------------
 
         //静态方法引用
         Supplier<String> s3 = Fun::hehe;
