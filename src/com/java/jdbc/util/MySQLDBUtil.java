@@ -3,7 +3,7 @@ package com.java.jdbc.util;
 import java.sql.*;
 
 public class MySQLDBUtil {
-    public static final String URL = "jdbc:mysql://localhost:3306:tran";
+    public static final String URL = "jdbc:mysql://localhost:3306/tran";
     public static final String USERNAME = "root";
     public static final String PASSWORD = "aaa111";
 
