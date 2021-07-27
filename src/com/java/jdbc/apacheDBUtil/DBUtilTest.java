@@ -2,7 +2,6 @@ package com.java.jdbc.apacheDBUtil;
 
 import com.java.jdbc.entity.Emp;
 import com.java.jdbc.util.MySQLDBUtil;
-import com.mysql.cj.jdbc.MysqlDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.*;
 
