@@ -4,7 +4,7 @@ public class Emp {
     private Integer empno;
     private String ename;
     private String job;
-    private Integer mrg;
+    private Integer mgr;
     private String hiredate;
     private Double sal;
     private Double comm;
@@ -16,7 +16,7 @@ public class Emp {
         this.empno = empno;
         this.ename = ename;
         this.job = job;
-        this.mrg = mrg;
+        this.mgr = mrg;
         this.hiredate = hiredate;
         this.sal = sal;
         this.comm = comm;
@@ -48,11 +48,11 @@ public class Emp {
     }
 
     public Integer getMrg() {
-        return mrg;
+        return mgr;
     }
 
     public void setMrg(Integer mrg) {
-        this.mrg = mrg;
+        this.mgr = mrg;
     }
 
     public String getHiredate() {
@@ -93,7 +93,7 @@ public class Emp {
                 "empno=" + empno +
                 ", ename='" + ename + '\'' +
                 ", job='" + job + '\'' +
-                ", mrg=" + mrg +
+                ", mgr=" + mgr +
                 ", hiredate='" + hiredate + '\'' +
                 ", sal=" + sal +
                 ", comm=" + comm +
