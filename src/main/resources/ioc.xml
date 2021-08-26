@@ -1,11 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-        <bean id="person" class="com.java.spring.bean.Persion">
+
+        <bean id="person" class="com.java.spring.bean.Person">
             <property name="id" value="1" />
             <property name="age" value="20" />
             <property name="gender" value="男" />
             <property name="name" value="小花" />
         </bean>
+
+        <bean id="person2" class="com.java.spring.bean.Person">
+            <constructor-arg name="id" value="2" />
+            <constructor-arg name="age" value="22" />
+            <constructor-arg name="gender" value="女" />
+            <constructor-arg name="name"  value="张三" />
+        </bean>
+
+    <bean id="person3" class="com.java.spring.bean.Person">
+        <constructor-arg  value="3" />
+        <constructor-arg  value="张三" />
+        <constructor-arg  value="23" />
+        <constructor-arg  value="女" />
+    </bean>
+
+    <bean id="person4" class="com.java.spring.bean.Person">
+        <constructor-arg  value="4" index="0"/>
+        <constructor-arg  value="女" index="3"/>
+        <constructor-arg  value="23" index="2"/>
+        <constructor-arg  value="张三" index="1"/>
+    </bean>
+
+    <bean id="person5" class="com.java.spring.bean.Person" p:id="5" p:age="25" p:name="王五" p:gender="男"/>
+
+    <bean id="person6" class="com.java.spring.bean.Person">
+        <property name="id" value="6" />
+        <property name="age" value="26" />
+        <property name="gender" value="男" />
+        <property name="name" value="小花" />
+        <!--数组赋值-->
+        <property name="hobbies">
+            <array>
+                <value>book</value>
+                <value>girl</value>
+                <value>movie</value>
+            </array>
+        </property>
+        <!--给对象赋值-->
+        <property name="address" ref="address"/>
+        <!--list赋值-->
+        <property name="list" value="1,2,3"></property>
+    </bean>
+
+    <bean id="address" class="com.java.spring.bean.Address">
+        <property name="province" value="广东省"/>
+        <property name="city" value="深圳市" />
+        <property name="town" value="罗湖区" />
+    </bean>
 </beans>
