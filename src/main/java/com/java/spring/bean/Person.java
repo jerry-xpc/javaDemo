@@ -10,9 +10,7 @@ public class Person{
 
     private String[] hobbies;
     private Address address;
-
     private List list;
-
     private List<Address> lists;
     private Set<String> sets;
     private Map<String,Object> maps;
@@ -134,5 +132,13 @@ public class Person{
                 ", maps=" + maps +
                 ", properties=" + properties +
                 '}';
+    }
+
+    public void init(){
+        System.out.println("Person对象初始化完成");
+    }
+
+    public void destory(){
+        System.out.println("Person对象已被销毁");
     }
 }
