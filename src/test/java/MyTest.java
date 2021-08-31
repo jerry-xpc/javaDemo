@@ -4,6 +4,7 @@ import com.java.spring.proxy.CalculatorProxy;
 import com.java.spring.service.Calculator;
 import com.java.spring.service.impl.*;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -58,6 +59,9 @@ public class MyTest {
 
     @Test
     public void test07() throws Exception{
+        DruidDataSource dataSource = context.getBean("dataSource", DruidDataSource.class);
+        long connectCount = dataSource.getConnectCount();
+        System.out.println(connectCount);
         JdbcTemplate jdbcTemplate = context.getBean("jdbcTemplate", JdbcTemplate.class);
         System.out.println(jdbcTemplate);
     }

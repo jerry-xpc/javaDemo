@@ -54,14 +54,13 @@ public class Test01 {
 //        System.out.println(person13);
 //        ((ClassPathXmlApplicationContext)context).close();
 
-//        DruidDataSource dataSource = context.getBean("dataSource", DruidDataSource.class);
-//        System.out.println(dataSource);
-//        System.out.println(dataSource.getConnection());
-
+        DruidDataSource dataSource = context.getBean("dataSource", DruidDataSource.class);
+        long connectCount = dataSource.getConnectCount();
+        System.out.println(connectCount);
 //        Person person15 = context.getBean("person15", Person.class);
 //        System.out.println(person15);
 
-        Person person16 = context.getBean("person16", Person.class);
-        System.out.println(person16);
+//        Person person16 = context.getBean("person16", Person.class);
+//        System.out.println(person16);
     }
 }

@@ -151,12 +151,12 @@
 <!--    <bean id="myBeanPostProcessor" class="com.java.spring.bean.MyBeanPostProcessor" />-->
 <!--    <bean id="address" class="com.java.spring.bean.Address"/>-->
 
-<!--    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >-->
-<!--        <property name="username" value="root"/>-->
-<!--        <property name="password" value="aaa111" />-->
-<!--        <property name="url" value="localhost:3306/xpc" />-->
-<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
-<!--    </bean>-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
+        <property name="username" value="root"/>
+        <property name="password" value="aaa111" />
+        <property name="url" value="localhost:3306/xpc" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    </bean>
 
 <!--    <bean id="dataSource1" class="com.alibaba.druid.pool.DruidDataSource" >-->
 <!--        <property name="username" value="${jdbc.username}"/>-->
@@ -165,20 +165,20 @@
 <!--        <property name="driverClassName" value="${jdbc.driverClassName}" />-->
 <!--    </bean>-->
 
-        <bean id="address" class="com.java.spring.bean.Address" >
-            <property name="province" value="广东省"/>
-            <property name="city" value="江门市"/>
-            <property name="town" value="蓬江区"/>
-        </bean>
+<!--        <bean id="address" class="com.java.spring.bean.Address" >-->
+<!--            <property name="province" value="广东省"/>-->
+<!--            <property name="city" value="江门市"/>-->
+<!--            <property name="town" value="蓬江区"/>-->
+<!--        </bean>-->
 
-        <bean id="person15" class="com.java.spring.bean.Person" autowire="byType"/>
+<!--        <bean id="person15" class="com.java.spring.bean.Person" autowire="byType"/>-->
 
-        <bean id="person16" class="com.java.spring.bean.Person">
-            <property name="id" value="#{12*2}"/>
-            <property name="name" value="#{address.province}"/>
-            <property name="address" value="#{address}"/>
-            <property name="hobbies" value="#{address.getCity()}"/>
-        </bean>
+<!--        <bean id="person16" class="com.java.spring.bean.Person">-->
+<!--            <property name="id" value="#{12*2}"/>-->
+<!--            <property name="name" value="#{address.province}"/>-->
+<!--            <property name="address" value="#{address}"/>-->
+<!--            <property name="hobbies" value="#{address.getCity()}"/>-->
+<!--        </bean>-->
 
 
 
