@@ -1,6 +1,5 @@
 package com.java.jdbc.pool.dbcp;
 
-import oracle.sql.DATE;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import java.sql.Connection;

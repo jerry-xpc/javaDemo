@@ -44,7 +44,7 @@ public class TestMethodAnnotation {
                     }
                 }
             }
-        } catch (ClassNotFoundException  | SecurityException e ) {
+        } catch (Exception e ) {
             e.printStackTrace();
         }
     }

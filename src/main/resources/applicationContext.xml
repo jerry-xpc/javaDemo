@@ -2,30 +2,24 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd
-">
-    <!--  开启包的扫描  -->
-    <context:component-scan base-package="com.java.spring"/>
-    <!--  开启aop注解  -->
-    <aop:aspectj-autoproxy />
-    <!--  读取指定文件取值  -->
-    <context:property-placeholder location="db.properties" />
-    <!--  配置数据库源信息  -->
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
-        <property name="name" value="${jdbc.username}" />
-        <property name="password" value="${jdbc.password}" />
-        <property name="url" value="${jdbc.url}" />
-        <property name="driverClassName" value="${jdbc.driverClassName}" />
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <context:component-scan base-package="com.java"></context:component-scan>
+    <context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+        <property name="driverClassName" value="${jdbc.driverName}"></property>
+        <property name="url" value="${jdbc.url}"></property>
     </bean>
-    <!--  jdbcTemple注册bean对象  -->
+    <!--jdbcTemplate注册为Bean对象-->
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"></property>
     </bean>
+
 </beans>
