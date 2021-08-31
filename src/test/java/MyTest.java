@@ -1,9 +1,11 @@
+import com.alibaba.druid.pool.DruidDataSource;
 import com.java.spring.controller.PersonController;
 import com.java.spring.proxy.CalculatorProxy;
 import com.java.spring.service.Calculator;
 import com.java.spring.service.impl.*;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 public class MyTest {
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -45,7 +47,26 @@ public class MyTest {
     public void test05() throws Exception{
         MyCalculatorImpl1 myCalculatorImpl = context.getBean(MyCalculatorImpl1.class);
         myCalculatorImpl.add(1,2);
-//        System.out.println(myCalculatorImpl.getClass());
-//        myCalculatorImpl.div(1,0);
+    }
+
+    @Test
+    public void test06() throws Exception{
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-aop.xml");
+        MyCalculatorImpl1 bean = context.getBean("myCalculatorImpl12",MyCalculatorImpl1.class);
+        bean.add(1,2);
+    }
+
+    @Test
+    public void test07() throws Exception{
+        JdbcTemplate jdbcTemplate = context.getBean("jdbcTemplate", JdbcTemplate.class);
+        System.out.println(jdbcTemplate);
+    }
+
+    @Test
+    public void test08() throws Exception{
+        JdbcTemplate jdbcTemplate = context.getBean("jdbcTemplate", JdbcTemplate.class);
+        String sql = "insert into emp(ENAME)values(?,?)";
+        int zhangsan = jdbcTemplate.update(sql, "zhangsan");
+        System.out.println(zhangsan);
     }
 }
