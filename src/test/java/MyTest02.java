@@ -14,14 +14,15 @@ public class MyTest02 {
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
     @Autowired
     BookService bookService;
+
     @Test
-    public void test01() throws Exception{
+    public void test01() throws Exception {
         MultService bean = context.getBean(MultService.class);
         bean.mult();
     }
 
     @Test
-    public void test02(){
+    public void test02() {
         BookService bean = context.getBean(BookService.class);
         Emp emp = new Emp();
         emp.setEmpno(2);
@@ -30,7 +31,7 @@ public class MyTest02 {
     }
 
     @Test
-    public void Test03(){
+    public void Test03() {
 
         try {
             Emp emp = new Emp();
@@ -38,7 +39,7 @@ public class MyTest02 {
             emp.setEname("dsdsdsd");
             emp.setJob("22222111ds");
             bookService.updateEmp(emp);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
