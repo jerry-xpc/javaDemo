@@ -15,4 +15,10 @@ public class EmpDao {
         int update = jdbcTemplate.update("insert into EMP(EMPNO,ENAME)values(?,?)",emp.getEmpno(),emp.getEname());
         System.out.println(update);
     }
+
+    public void update(Emp emp){
+        String sql = "update EMP set JOB=? WHERE EMPNO=?";
+        int update = jdbcTemplate.update(sql,emp.getJob(),emp.getEmpno());
+        System.out.println(update);
+    }
 }

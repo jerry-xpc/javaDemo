@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-//@Aspect
-//@Component
+@Aspect
+@Component
 public class LogUtil {
 
-    @Pointcut(value = "execution(* *.*(..))")
+    @Pointcut(value = "execution(* com.java.spring.service.impl.BookService.updateEmp(..))")
     public void myPointCut(){}
 
     @Before(value = "myPointCut()")
@@ -22,25 +22,25 @@ public class LogUtil {
         System.out.println(signature.getName()+"方法开始执行：参数是"+ Arrays.asList(args));
     }
 
-    @AfterReturning(value = "myPointCut()",returning = "result")
+   // @AfterReturning(value = "myPointCut()",returning = "result")
     public static void stop(JoinPoint joinPoint,Object result){
         Signature signature = joinPoint.getSignature();
         System.out.println(signature.getName()+"方法执行结束，结果是："+result);
     }
 
-    @AfterThrowing(value = "myPointCut()",throwing = "e")
+    //@AfterThrowing(value = "myPointCut()",throwing = "e")
     public static void logException(JoinPoint joinPoint,Exception e){
         Signature signature = joinPoint.getSignature();
         System.out.println(signature.getName()+"方法抛出异常："+e.getMessage());
     }
 
-    @After(value = "myPointCut()")
+   // @After(value = "myPointCut()")
     public static void logFinally(JoinPoint joinPoint){
         Signature signature = joinPoint.getSignature();
         System.out.println(signature.getName()+"方法执行结束。。。。。over");
     }
 
-    @Around(value = "myPointCut()")
+   // @Around(value = "myPointCut()")
     public Object around(ProceedingJoinPoint proceedingJoinPoint){
         Signature signature = proceedingJoinPoint.getSignature();
         Object[] args = proceedingJoinPoint.getArgs();
