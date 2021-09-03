@@ -4,12 +4,9 @@ import com.java.spring.dao.BookDao;
 import com.java.spring.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 @Service
 public class BookServiceImpl implements BookService {
     @Autowired

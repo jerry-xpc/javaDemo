@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Component
 public class BookService {
     @Autowired
     BookDao bookDao;
@@ -29,7 +28,10 @@ public class BookService {
         bookDao.updatePrice(1);
     }
 
+    @Transactional
     public void updateEmp(Emp emp){
         empDao.update(emp);
+        empDao.save(emp);
+
     }
 }

@@ -18,7 +18,12 @@ public class EmpDao {
 
     public void update(Emp emp){
         String sql = "update EMP set JOB=? WHERE EMPNO=?";
-        int update = jdbcTemplate.update(sql,emp.getJob(),emp.getEmpno());
+        int update = jdbcTemplate.update(sql,emp.getJob(),2);
         System.out.println(update);
+        try {
+            int i= 1 /0 ;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

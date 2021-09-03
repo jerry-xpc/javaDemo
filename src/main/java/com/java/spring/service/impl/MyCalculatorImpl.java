@@ -2,7 +2,6 @@ package com.java.spring.service.impl;
 
 import com.java.spring.service.Calculator;
 import org.springframework.stereotype.Service;
-
 @Service
 public class MyCalculatorImpl implements Calculator {
     @Override

@@ -12,7 +12,7 @@ import java.util.Arrays;
 @Component
 public class LogUtil {
 
-    @Pointcut(value = "execution(* com.java.spring.service.impl.BookService.updateEmp(..))")
+    @Pointcut(value = "execution(* com..*(..))")
     public void myPointCut(){}
 
     @Before(value = "myPointCut()")
