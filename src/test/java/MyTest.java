@@ -148,6 +148,4 @@ public class MyTest {
         BookService bean = context.getBean(BookServiceImpl.class);
         bean.buyBook();
     }
-
-
 }

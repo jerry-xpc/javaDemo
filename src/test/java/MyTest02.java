@@ -17,7 +17,8 @@ public class MyTest02 {
 
     @Test
     public void test01() throws Exception {
-        MultService bean = context.getBean(MultService.class);
+        ClassPathXmlApplicationContext context1 = new ClassPathXmlApplicationContext("applicationContext.xml");
+        MultService bean = context1.getBean(MultService.class);
         bean.mult();
     }
 
