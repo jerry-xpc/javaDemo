@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: gjs
-  Date: 2021/9/17
-  Time: 11:51
+  User: root
+  Date: 2020/3/14
+  Time: 15:56
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    ${hello}
+欢迎加入马士兵教育
+${hello}
 </body>
 </html>
