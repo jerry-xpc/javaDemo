@@ -10,8 +10,13 @@
   <head>
     <title>Hello Word</title>
   </head>
+  <%
+    pageContext.setAttribute("ctx",request.getContextPath());
+  %>
   <body>
-    Hello Word！
-    世界依然美好!
+    <form action="${ctx}/ishello" method="post">
+        <input type="text" name="username" /><br>
+        <input type="submit" value="提交" />
+    </form>
   </body>
 </html>
