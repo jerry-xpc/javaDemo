@@ -12,6 +12,9 @@
 </head>
 <body>
 欢迎加入马士兵教育
-${hello}
+${hello}<br>
+request:${requestScope.get("request")}<br>
+session:${sessionScope.get("session")}
+
 </body>
 </html>
