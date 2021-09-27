@@ -4,6 +4,7 @@ public class User {
     private Integer id;
     private String name;
     private Integer age;
+    private String password;
     private String gender;
     private Address address;
 
@@ -51,12 +52,21 @@ public class User {
         this.address = address;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", password='" + password + '\'' +
                 ", gender='" + gender + '\'' +
                 ", address=" + address +
                 '}';

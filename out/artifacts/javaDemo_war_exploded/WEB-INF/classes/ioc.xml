@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+">
+
+        <!--<bean id="person" class="com.java.spring.bean.Person">
+            <property name="id" value="1" />
+            <property name="age" value="20" />
+            <property name="gender" value="男" />
+            <property name="name" value="小花" />
+        </bean>
+
+        <bean id="person2" class="com.java.spring.bean.Person">
+            <constructor-arg name="id" value="2" />
+            <constructor-arg name="age" value="22" />
+            <constructor-arg name="gender" value="女" />
+            <constructor-arg name="name"  value="张三" />
+        </bean>
+
+    <bean id="person3" class="com.java.spring.bean.Person">
+        <constructor-arg  value="3" />
+        <constructor-arg  value="张三" />
+        <constructor-arg  value="23" />
+        <constructor-arg  value="女" />
+    </bean>
+
+    <bean id="person4" class="com.java.spring.bean.Person">
+        <constructor-arg  value="4" index="0"/>
+        <constructor-arg  value="女" index="3"/>
+        <constructor-arg  value="23" index="2"/>
+        <constructor-arg  value="张三" index="1"/>
+    </bean>
+
+    <bean id="person5" class="com.java.spring.bean.Person" p:id="5" p:age="25" p:name="王五" p:gender="男"/>
+
+    <bean id="person6" class="com.java.spring.bean.Person">
+        <property name="id" value="6" />
+        <property name="age" value="26" />
+        <property name="gender" value="男" />
+        <property name="name" value="小花" />
+        &lt;!&ndash;数组赋值&ndash;&gt;
+        <property name="hobbies">
+            <array>
+                <value>book</value>
+                <value>girl</value>
+                <value>movie</value>
+            </array>
+        </property>
+        &lt;!&ndash;给对象赋值&ndash;&gt;
+        <property name="address" ref="address"/>
+        &lt;!&ndash;list赋值&ndash;&gt;
+        <property name="list" value="1,2,3"></property>
+
+        <property name="lists">
+            <list>
+                <bean id="address2" class="com.java.spring.bean.Address">
+                    <property name="province" value="四川省"/>
+                    <property name="city" value="南充市"/>
+                    <property name="town" value="蓬安县"/>
+                </bean>
+                <bean id="address3" class="com.java.spring.bean.Address">
+                    <property name="province" value="北京市"/>
+                    <property name="city" value="北京市" />
+                    <property name="town" value="朝阳区"/>
+                </bean>
+            </list>
+        </property>
+
+        <property name="sets">
+            <set>
+                <value>邢鹏程</value>
+                <value>习近平</value>
+                <value>李克强</value>
+                <value>邢鹏程</value>
+            </set>
+        </property>
+
+        <property name="maps">
+            <map>
+                <entry key="a" value="a1"/>
+                <entry key="address" value-ref="address"/>
+                <entry key="address1">
+                    <bean id="address" class="com.java.spring.bean.Address">
+                        <property name="province" value="湖北省"/>
+                        <property name="city" value="武汉市"/>
+                        <property name="town" value="汉口区"/>
+                    </bean>
+                </entry>
+                <entry>
+                    <key>
+                        <value>123</value>
+                    </key>
+                    <value>2344</value>
+                </entry>
+                <entry key="list">
+                    <list>
+                        <value>123</value>
+                    </list>
+                </entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="aaa">bbbb</prop>
+            </props>
+
+        </property>
+    </bean>
+
+    <bean id="address" class="com.java.spring.bean.Address">
+        <property name="province" value="广东省"/>
+        <property name="city" value="深圳市" />
+        <property name="town" value="罗湖区" />
+    </bean>-->
+
+<!--    <bean id="person7" class="com.java.spring.bean.Person" abstract="true">-->
+<!--        <property name="id" value="7"/>-->
+<!--        <property name="name" value="小七"/>-->
+<!--        <property name="age" value="17"/>-->
+<!--        <property name="gender" value="女" />-->
+<!--    </bean>-->
+
+<!--    <bean id="person8" class="com.java.spring.bean.Person" parent="person7">-->
+<!--        <property name="name" value="毛泽东"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="person9" class="com.java.spring.bean.Person" scope="singleton" />-->
+
+<!--    <bean id="person10" class="com.java.spring.factory.PersonStaticFactory" factory-method="getInstance">-->
+<!--        <constructor-arg value="李世民"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="person11" class="com.java.spring.factory.PersonInstanceFactory" />-->
+<!--    <bean id="person12" class="com.java.spring.bean.Person" factory-bean="person11" factory-method="getInstance">-->
+<!--        <constructor-arg value="唐太宗"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="address" class="com.java.spring.bean.Address" factory-bean="person11" factory-method="getAdrress"/>-->
+
+<!--    <bean id="myFactoryBean" class="com.java.spring.factory.MyFactoryBean"/>-->
+
+<!--    <bean id="person13" class="com.java.spring.bean.Person" init-method="init" destroy-method="destory"/>-->
+
+<!--    <bean id="myBeanPostProcessor" class="com.java.spring.bean.MyBeanPostProcessor" />-->
+<!--    <bean id="address" class="com.java.spring.bean.Address"/>-->
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
+        <property name="username" value="root"/>
+        <property name="password" value="aaa111" />
+        <property name="url" value="localhost:3306/xpc" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    </bean>
+
+<!--    <bean id="dataSource1" class="com.alibaba.druid.pool.DruidDataSource" >-->
+<!--        <property name="username" value="${jdbc.username}"/>-->
+<!--        <property name="password" value="${jdbc.password}" />-->
+<!--        <property name="url" value="${jdbc.url}" />-->
+<!--        <property name="driverClassName" value="${jdbc.driverClassName}" />-->
+<!--    </bean>-->
+
+<!--        <bean id="address" class="com.java.spring.bean.Address" >-->
+<!--            <property name="province" value="广东省"/>-->
+<!--            <property name="city" value="江门市"/>-->
+<!--            <property name="town" value="蓬江区"/>-->
+<!--        </bean>-->
+
+<!--        <bean id="person15" class="com.java.spring.bean.Person" autowire="byType"/>-->
+
+<!--        <bean id="person16" class="com.java.spring.bean.Person">-->
+<!--            <property name="id" value="#{12*2}"/>-->
+<!--            <property name="name" value="#{address.province}"/>-->
+<!--            <property name="address" value="#{address}"/>-->
+<!--            <property name="hobbies" value="#{address.getCity()}"/>-->
+<!--        </bean>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <context:property-placeholder location="classpath:db.properties"/>
+</beans>

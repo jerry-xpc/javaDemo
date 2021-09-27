@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+">
+    <bean id="logUtil" class="com.java.spring.util.LogUtil"/>
+    <bean id="myCalculatorImpl12" class="com.java.spring.service.impl.MyCalculatorImpl1" />
+
+    <aop:config>
+        <aop:pointcut id="myPointCut" expression="execution(* *.*(..))"/>
+
+        <aop:aspect ref="logUtil">
+            <aop:before method="start" pointcut-ref="myPointCut"/>
+            <aop:after method="logFinally" pointcut-ref="myPointCut" />
+            <aop:after-throwing method="logException" pointcut-ref="myPointCut" throwing="e"/>
+            <aop:after-returning method="stop" pointcut-ref="myPointCut" returning="result" />
+<!--            <aop:around method="around" pointcut-ref="myPointCut"/>-->
+        </aop:aspect>
+    </aop:config>
+
+</beans>
