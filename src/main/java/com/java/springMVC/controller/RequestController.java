@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -74,5 +75,14 @@ public class RequestController {
         map.addAttribute("request","testRespnoseModelMap");
         map.addAttribute("session","testRespnoseModelMap");
         return "hello";
+    }
+
+    @RequestMapping("/testModelAndView")
+    public ModelAndView testModelAndView(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("hello");
+        modelAndView.addObject("request","testModelAndView");
+        modelAndView.addObject("session","testModelAndView");
+        return modelAndView;
     }
 }
