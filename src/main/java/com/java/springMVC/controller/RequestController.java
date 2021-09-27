@@ -4,10 +4,7 @@ import com.java.springMVC.bean.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +14,7 @@ import java.util.Locale;
 import java.util.Map;
 
 @Controller
+@SessionAttributes(value ={"userName","request"} )
 public class RequestController {
     @RequestMapping("/testRequest")
     public String testRequest(String name){
@@ -70,8 +68,8 @@ public class RequestController {
         return "hello";
     }
 
-    @RequestMapping("/testRespnoseModelMap")
-    public String testRespnoseModelMap(ModelMap map){
+    @RequestMapping("/testResponseModelMap")
+    public String testResponseModelMap(ModelMap map){
         map.addAttribute("request","testRespnoseModelMap");
         map.addAttribute("session","testRespnoseModelMap");
         return "hello";
@@ -84,5 +82,11 @@ public class RequestController {
         modelAndView.addObject("request","testModelAndView");
         modelAndView.addObject("session","testModelAndView");
         return modelAndView;
+    }
+
+    @RequestMapping("/testSession")
+    public String testSession(Model model){
+        model.addAttribute("userName","testSession");
+        return "hello";
     }
 }

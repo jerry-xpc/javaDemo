@@ -13,7 +13,10 @@
 <body>
 欢迎加入马士兵教育
 ${hello}<br>
-request:${request}<br>
-session:${session}
+request:${requestScope.request}<br/>
+session:${sessionScope.request}<br/>
+<h>-----------</h><br>
+session:${sessionScope.userName}<br>
+request:${requestScope.userName}<br>
 </body>
 </html>
