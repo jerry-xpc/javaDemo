@@ -117,4 +117,34 @@ public class RequestController {
         user.setAge(12);
         return user;
     }
+
+    @RequestMapping("/testForward")
+    public String testForward(){
+        return "forward:/index.jsp";
+    }
+
+    @RequestMapping("/testForward2")
+    public String testForward2(){
+        return "forward:/testUpdate";
+    }
+
+    @RequestMapping("/testRedirect")
+    public String testRedirect(){
+        return "redirect:/testUpdate";
+    }
+
+    @RequestMapping("/testStatic")
+    public String testStatic(){
+        return "forward:/testSession";
+    }
+
+    @RequestMapping("/testMyViewResolver")
+    public String testMyViewResolver(){
+        return "xpc:/user";
+    }
+
+    @RequestMapping("/testMyViewResolve1")
+    public String testMyViewResolver1(){
+        return "xpc2:/user";
+    }
 }

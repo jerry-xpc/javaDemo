@@ -10,6 +10,10 @@
 <head>
     <title>Title</title>
 </head>
+<%
+    pageContext.setAttribute("ctx",request.getContextPath());
+%>
+
 <body>
 欢迎加入马士兵教育
 ${hello}<br>
@@ -18,5 +22,6 @@ session:${sessionScope.request}<br/>
 <h>-----------</h><br>
 session:${sessionScope.userName}<br>
 request:${requestScope.userName}<br>
+<img src="${ctx}/imge/1.jpg">
 </body>
 </html>
