@@ -14,7 +14,11 @@
     pageContext.setAttribute("ctp",request.getContextPath());
 %>
 <body>
+<<<<<<< HEAD
 <form action="${ctp}/update">
+=======
+<form action="${ctp}/testUpdate">
+>>>>>>> origin/master
     <input type="hidden" value="1" name="id"><br>
     name:张三<br>
     password:<input type="password" name="password"><br>

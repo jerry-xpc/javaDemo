@@ -89,4 +89,32 @@ public class RequestController {
         model.addAttribute("userName","testSession");
         return "hello";
     }
+
+    @RequestMapping("/testUpdate")
+    public String testUpdate(@ModelAttribute("user") User user){
+        System.out.println(user);
+        return "hello";
+    }
+
+    @ModelAttribute
+    public void testModelAttribute1(Model model){
+        System.out.println("testModelAttribute1----------");
+        User user = new User();
+        user.setId(2);
+        user.setName("粤粤");
+        user.setPassword("1234");
+        user.setAge(12);
+        model.addAttribute("user",user);
+    }
+
+    @ModelAttribute("user")
+    public User testModelAttribute2(Model model){
+        System.out.println("testModelAttribute2----------");
+        User user = new User();
+        user.setId(2);
+        user.setName("粤粤");
+        user.setPassword("1234");
+        user.setAge(12);
+        return user;
+    }
 }
